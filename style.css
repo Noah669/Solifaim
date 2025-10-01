@@ -646,12 +646,25 @@ html {
         font-size: 0.95rem;
     }
 
-    nav ul li a:active {
+    nav ul li a:active,
+    nav ul li a:hover {
         color: #1a5a6a !important;
     }
 
     nav ul li a:not(.active)::after {
         width: 0 !important;
+    }
+
+    nav ul li a:not(.active) {
+        color: #1a5a6a !important;
+    }
+
+    nav ul li a.active {
+        color: #ff6b35 !important;
+    }
+
+    nav ul li a.active::after {
+        width: 100% !important;
     }
 
     nav ul li a {
