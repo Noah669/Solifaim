@@ -60,7 +60,7 @@ nav a {
     padding: 0.5rem 0;
 }
 
-nav a::after {
+nav ul li a::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -76,7 +76,7 @@ nav a.active::after {
     width: 100%;
 }
 
-nav a:hover {
+nav ul li a:hover {
     color: #ff6b35;
 }
 
