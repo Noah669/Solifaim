@@ -1,4 +1,49 @@
-// Animation au scroll pour les sections
+// Variables pour la détection du scroll direction sur mobile
+let lastScrollTop = 0;
+let isScrolling = false;
+const nav = document.querySelector('nav');
+const isMobile = () => window.innerWidth <= 768;
+
+// Fonction pour gérer l'affichage/masquage de la navbar
+function handleNavbarScroll() {
+    if (!isMobile()) return; // Ne s'applique que sur mobile
+    
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    
+    // Éviter les micro-mouvements
+    if (Math.abs(lastScrollTop - currentScroll) <= 5) return;
+    
+    // Si on descend ET qu'on a dépassé la hauteur de la navbar
+    if (currentScroll > lastScrollTop && currentScroll > nav.offsetHeight) {
+        // Scroll vers le bas - cacher la navbar
+        nav.classList.add('nav-hidden');
+    } else if (currentScroll < lastScrollTop) {
+        // Scroll vers le haut - montrer la navbar
+        nav.classList.remove('nav-hidden');
+    }
+    
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Pour Safari mobile
+}
+
+// Optimisation avec requestAnimationFrame
+window.addEventListener('scroll', () => {
+    if (!isScrolling) {
+        window.requestAnimationFrame(() => {
+            handleNavbarScroll();
+            isScrolling = false;
+        });
+        isScrolling = true;
+    }
+});
+
+// Réinitialiser lors du redimensionnement
+window.addEventListener('resize', () => {
+    if (!isMobile()) {
+        nav.classList.remove('nav-hidden');
+    }
+});
+
+// Animation au scroll pour les sections (code existant maintenant intégré)
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'

@@ -17,7 +17,7 @@ nav {
     top: 0;
     width: 100%;
     background: rgba(255, 255, 255, 0.98);
-    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     padding: 0.8rem 0;
 }
@@ -102,15 +102,22 @@ nav ul li a:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
+    background:
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
     animation: pulse 8s ease-in-out infinite;
 }
 
 @keyframes pulse {
-    0%, 100% { opacity: 0.5; }
-    50% { opacity: 1; }
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
 }
 
 .logo-hero {
@@ -122,7 +129,7 @@ nav ul li a:hover {
     align-items: center;
     justify-content: center;
     margin-bottom: 2.5rem;
-    box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
     position: relative;
     z-index: 1;
     animation: float 4s ease-in-out infinite;
@@ -137,11 +144,14 @@ nav ul li a:hover {
 }
 
 @keyframes float {
-    0%, 100% { 
-        transform: translateY(0) scale(1); 
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
     }
-    50% { 
-        transform: translateY(-20px) scale(1.05); 
+
+    50% {
+        transform: translateY(-20px) scale(1.05);
     }
 }
 
@@ -150,7 +160,7 @@ nav ul li a:hover {
     margin-bottom: 1rem;
     position: relative;
     z-index: 1;
-    text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
     font-weight: 700;
     letter-spacing: 2px;
 }
@@ -162,7 +172,7 @@ nav ul li a:hover {
     max-width: 600px;
     margin: 0 auto;
     font-weight: 300;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Section commune */
@@ -205,7 +215,7 @@ h2::after {
     padding: 2rem;
     background: white;
     border-radius: 20px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
 .about-content p {
@@ -229,7 +239,7 @@ h2::after {
     background: white;
     padding: 2.5rem;
     border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: all 0.3s ease;
     border: 3px solid transparent;
@@ -291,7 +301,7 @@ h2::after {
     padding: 2rem;
     background: white;
     border-radius: 20px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease;
 }
 
@@ -348,7 +358,7 @@ h2::after {
     background: white;
     padding: 3rem 2rem;
     border-radius: 20px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: all 0.3s ease;
     border: 3px solid #e0e0e0;
@@ -356,7 +366,7 @@ h2::after {
 
 .pricing-card:hover {
     transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
     border-color: #ff6b35;
 }
 
@@ -428,7 +438,7 @@ h2::after {
     right: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
     transition: transform 0.5s ease;
 }
 
@@ -464,7 +474,7 @@ h2::after {
 
 .contact-card a:hover {
     color: #fff;
-    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 /* Map */
@@ -472,7 +482,7 @@ h2::after {
     margin-top: 3rem;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
     height: 500px;
     border: 5px solid #1a5a6a;
 }
@@ -489,7 +499,7 @@ h2::after {
     padding: 1.5rem;
     background: white;
     border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
 }
 
 .map-address p {
@@ -590,6 +600,7 @@ html {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -598,6 +609,15 @@ html {
 
 /* Responsive */
 @media (max-width: 768px) {
+    nav {
+        transform: translateY(0);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    nav.nav-hidden {
+        transform: translateY(-100%);
+    }
+
     .hero h1 {
         font-size: 2.8rem;
     }
