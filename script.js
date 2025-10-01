@@ -43,7 +43,7 @@ window.addEventListener('resize', () => {
     }
 });
 
-// Animation au scroll pour les sections (code existant maintenant intégré)
+// Animation au scroll pour les sections
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -94,9 +94,30 @@ document.addEventListener('DOMContentLoaded', () => {
             card.style.transform = 'translateY(0)';
         }, index * 150);
     });
+
+    // Corriger le problème d'état active sur mobile
+    if (isMobile()) {
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            // Supprimer l'état :active après le touch
+            link.addEventListener('touchend', function() {
+                this.blur(); // Enlever le focus
+                setTimeout(() => {
+                    this.classList.remove('active');
+                }, 100);
+            });
+            
+            // Gérer les clics normaux
+            link.addEventListener('click', function() {
+                if (isMobile()) {
+                    this.blur(); // Enlever le focus immédiatement
+                }
+            });
+        });
+    }
 });
 
-// Effet de surbrillance sur le menu lors du scroll
+// Effet de surbrillance sur le menu lors du scroll (amélioré)
 window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('nav a');
@@ -111,9 +132,18 @@ window.addEventListener('scroll', () => {
         }
     });
     
+    // Nettoyer tous les états actifs d'abord
     navLinks.forEach(link => {
         link.classList.remove('active');
-        if (link.getAttribute('href').includes(current)) {
+        // Sur mobile, forcer la suppression de l'état :active
+        if (isMobile()) {
+            link.blur();
+        }
+    });
+    
+    // Appliquer l'état actif au lien correspondant
+    navLinks.forEach(link => {
+        if (link.getAttribute('href').includes(current) && current !== '') {
             link.classList.add('active');
         }
     });
